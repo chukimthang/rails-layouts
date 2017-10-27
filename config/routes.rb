@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope :admin do
+    scope module: :backend do
+      root "application#index"
+    end
+  end
+
+  scope module: :frontend do
+    root "application#index"
+  end
 end
